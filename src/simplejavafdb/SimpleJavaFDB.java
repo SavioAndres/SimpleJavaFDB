@@ -13,7 +13,7 @@ public class SimpleJavaFDB {
     private Delete delete;
     
     public SimpleJavaFDB(String database) {
-        String path = "base/" + database + ".jfdb";
+        String path = "src/base/" + database + ".jfdb";
         this.insert = new Insert(path);
         this.select = new Select(path);
         this.update = new Update(path);
