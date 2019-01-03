@@ -13,12 +13,18 @@ public class SimpleJavaFDB {
     private Delete delete;
     
     public SimpleJavaFDB(String database) {
-        String path = "src/base/" + database + ".jfdb";
-        this.insert = new Insert(path);
-        this.select = new Select(path);
-        this.update = new Update(path);
-        this.delete = new Delete(path);
+        this("src/base/", database);
     }
+
+    public SimpleJavaFDB(String path, String database) {
+        String path_ = path + database + ".jfdb";
+        this.insert = new Insert(path_);
+        this.select = new Select(path_);
+        this.update = new Update(path_);
+        this.delete = new Delete(path_);
+    }
+    
+    
     
     public int insert(String data) { 
         return insert.insert(data);
